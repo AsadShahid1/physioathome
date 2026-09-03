@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth overflow-x-hidden">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
@@ -10,6 +10,13 @@
   <script>
     tailwind.config = {
       theme: {
+        screens: {
+          'xs': '400px',
+          'sm': '640px',
+          'md': '768px',
+          'lg': '1024px',
+          'xl': '1280px',
+        },
         extend: {
           colors: {
             emerald: { 50: '#ecfdf5', 100: '#d1fae5', 500: '#10b981', 600: '#059669', 700: '#047857', 800: '#065f46' },
@@ -27,28 +34,28 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-emerald-600 selection:text-white">
+<body class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-emerald-600 selection:text-white overflow-x-hidden w-full max-w-full">
 
   <!-- ==================== TOP CONTACT & ANNOUNCEMENT BAR ==================== -->
-  <div class="bg-slate-900 text-slate-300 text-xs py-2 px-4 sm:px-6 lg:px-8 border-b border-slate-800">
-    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
-      <div class="flex items-center space-x-3 overflow-hidden">
-        <span class="flex items-center space-x-1.5 text-emerald-400 font-medium shrink-0">
-          <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-400"></i>
-          <span>Lahore's #1 At-Home Physio Platform</span>
+  <div class="bg-slate-900 text-slate-300 text-[11px] sm:text-xs py-2 px-3 sm:px-6 lg:px-8 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex items-center justify-between gap-2">
+      <div class="flex items-center space-x-2 overflow-hidden min-w-0">
+        <span class="flex items-center space-x-1 text-emerald-400 font-medium shrink-0">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-400 shrink-0"></i>
+          <span class="truncate">#1 At-Home Physio in Lahore</span>
         </span>
         <span class="hidden md:flex items-center space-x-1.5 text-slate-400 truncate border-l border-slate-700 pl-3">
           <i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-400 shrink-0"></i>
-          <span>Serving DHA, Cantt, Johar Town, Gulberg, Model Town & All Lahore</span>
+          <span class="truncate">Serving DHA, Cantt, Johar Town, Gulberg, Model Town & All Lahore</span>
         </span>
       </div>
-      <div class="flex items-center space-x-4 text-slate-300 text-xs ml-auto sm:ml-0">
-        <a href="tel:+923340043512" class="flex items-center space-x-1 hover:text-emerald-400 font-bold transition-colors">
+      <div class="flex items-center space-x-3 text-slate-300 shrink-0 font-semibold text-[11px] sm:text-xs">
+        <a href="tel:+923340043512" class="flex items-center space-x-1 hover:text-emerald-400 transition-colors">
           <i data-lucide="phone-call" class="w-3.5 h-3.5 text-emerald-400"></i>
           <span>0334 0043512</span>
         </a>
-        <span class="text-slate-700">|</span>
-        <a href="https://wa.me/923340043512" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-1 text-emerald-400 hover:text-emerald-300 font-bold transition-colors">
+        <span class="text-slate-700 hidden xs:inline">|</span>
+        <a href="https://wa.me/923340043512" target="_blank" rel="noopener noreferrer" class="hidden xs:flex items-center space-x-1 text-emerald-400 hover:text-emerald-300 transition-colors">
           <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
           <span>WhatsApp</span>
         </a>
@@ -57,20 +64,20 @@
   </div>
 
   <!-- ==================== MAIN STICKY NAVIGATION BAR ==================== -->
-  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs transition-all">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-3">
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs transition-all w-full">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2 sm:gap-4">
       
       <!-- Brand Logo (Physio at Home) -->
-      <a href="index.html" class="flex items-center space-x-2.5 group shrink-0">
-        <div class="w-9 h-9 sm:w-10 sm:h-10 bg-slate-900 rounded-xl flex items-center justify-center text-emerald-400 shadow-sm border border-slate-800 group-hover:bg-emerald-600 group-hover:text-white transition-all shrink-0">
-          <svg class="w-5 h-5 fill-none stroke-current stroke-[2.2]" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+      <a href="index.html" class="flex items-center space-x-2 group shrink min-w-0">
+        <div class="w-8 h-8 sm:w-10 sm:h-10 bg-slate-900 rounded-xl flex items-center justify-center text-emerald-400 shadow-sm border border-slate-800 group-hover:bg-emerald-600 group-hover:text-white transition-all shrink-0">
+          <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-none stroke-current stroke-[2.2]" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
             <path d="M3 10l9-7 9 7v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V10z" />
             <path d="M9 14h6M12 11v6" />
           </svg>
         </div>
-        <div class="flex flex-col">
-          <span class="text-lg sm:text-2xl font-black tracking-tight text-slate-900 leading-none">Physio<span class="text-emerald-600">AtHome</span><span class="text-slate-400 text-xs sm:text-base">.pk</span></span>
-          <span class="text-[8px] sm:text-[9px] font-bold tracking-widest text-slate-500 uppercase mt-0.5">Lahore Doorstep Healthcare</span>
+        <div class="flex flex-col min-w-0">
+          <span class="text-base sm:text-2xl font-black tracking-tight text-slate-900 leading-none truncate">Physio<span class="text-emerald-600">AtHome</span><span class="text-slate-400 text-xs sm:text-base">.pk</span></span>
+          <span class="text-[8px] sm:text-[9px] font-bold tracking-widest text-slate-500 uppercase mt-0.5 hidden xs:block truncate">Lahore Doorstep Healthcare</span>
         </div>
       </a>
 
@@ -86,14 +93,14 @@
       </nav>
 
       <!-- Utility Buttons & Booking CTA -->
-      <div class="flex items-center space-x-2 shrink-0">
-        <button data-open-modal="search" class="p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-xl transition-all" title="Search">
-          <i data-lucide="search" class="w-5 h-5"></i>
+      <div class="flex items-center space-x-1 sm:space-x-2 shrink-0">
+        <button data-open-modal="search" class="p-1.5 sm:p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-xl transition-all" title="Search">
+          <i data-lucide="search" class="w-4 h-4 sm:w-5 sm:h-5"></i>
         </button>
 
-        <button data-open-modal="cart" class="relative p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-xl transition-all" title="Care Cart">
-          <i data-lucide="shopping-bag" class="w-5 h-5"></i>
-          <span id="cart-count" class="absolute top-0.5 right-0.5 w-4 h-4 bg-emerald-600 text-white text-[9px] font-bold rounded-full flex items-center justify-center">1</span>
+        <button data-open-modal="cart" class="relative p-1.5 sm:p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-xl transition-all" title="Care Cart">
+          <i data-lucide="shopping-bag" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+          <span id="cart-count" class="absolute top-0 right-0 sm:top-0.5 sm:right-0.5 w-3.5 h-3.5 sm:w-4 sm:h-4 bg-emerald-600 text-white text-[9px] font-bold rounded-full flex items-center justify-center">1</span>
         </button>
 
         <button data-open-modal="booking" class="hidden sm:inline-flex items-center space-x-1.5 px-3.5 py-2.5 rounded-xl bg-slate-900 hover:bg-emerald-600 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-sm">
@@ -101,8 +108,8 @@
           <span>Book Home Visit</span>
         </button>
 
-        <button id="mobile-menu-btn" class="lg:hidden p-2 text-slate-700 hover:bg-slate-100 rounded-xl" aria-label="Open mobile menu">
-          <i data-lucide="menu" class="w-6 h-6"></i>
+        <button id="mobile-menu-btn" class="lg:hidden p-1.5 sm:p-2 text-slate-700 hover:bg-slate-100 rounded-xl" aria-label="Open mobile menu">
+          <i data-lucide="menu" class="w-5 h-5 sm:w-6 sm:h-6"></i>
         </button>
       </div>
 
@@ -119,7 +126,7 @@
             <i data-lucide="x" class="w-6 h-6"></i>
           </button>
         </div>
-        <nav class="flex flex-col space-y-3 font-semibold text-sm">
+        <nav class="flex flex-col space-y-2 font-semibold text-sm">
           <a href="index.html" class="p-2 text-emerald-600 bg-emerald-50 rounded-xl font-bold">Home</a>
           <a href="services.html" class="p-2 text-slate-700 hover:text-emerald-600 hover:bg-slate-50 rounded-xl">Services</a>
           <a href="about.html" class="p-2 text-slate-700 hover:text-emerald-600 hover:bg-slate-50 rounded-xl">Our Doctors</a>
@@ -142,17 +149,17 @@
     </div>
   </div>
 
-  <!-- ==================== HERO SECTION (RESPONSIVE) ==================== -->
-  <section class="relative bg-white py-10 sm:py-16 lg:py-24 border-b border-slate-200/80">
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="relative bg-white py-8 sm:py-16 lg:py-24 border-b border-slate-200/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
         <!-- Left Hero Column -->
         <div class="lg:col-span-7 space-y-5 sm:space-y-7 text-left">
           
-          <div class="inline-flex items-center space-x-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-800 text-[11px] sm:text-xs font-bold uppercase tracking-wider">
-            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-            <span>Lahore's Leading At-Home Physio Platform</span>
+          <div class="inline-flex items-center space-x-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-800 text-[10px] sm:text-xs font-bold uppercase tracking-wider">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
+            <span class="truncate">Lahore's Leading At-Home Physio Platform</span>
           </div>
 
           <h1 class="text-2xl sm:text-4xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.15]">
@@ -206,17 +213,17 @@
         </div>
 
         <!-- Right Quick Appointment Booking Card -->
-        <div class="lg:col-span-5 mt-6 lg:mt-0">
-          <div class="bg-slate-50 p-5 sm:p-8 rounded-3xl border border-slate-200 shadow-xs space-y-4">
+        <div class="lg:col-span-5 mt-4 lg:mt-0">
+          <div class="bg-slate-50 p-4 sm:p-8 rounded-3xl border border-slate-200 shadow-xs space-y-4">
             <div class="flex items-center justify-between border-b border-slate-200/80 pb-3">
               <div>
                 <span class="text-[9px] font-extrabold uppercase tracking-widest text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">Fast Consultation</span>
-                <h3 class="text-lg sm:text-xl font-extrabold text-slate-900 mt-1">Book Your Home Session</h3>
+                <h3 class="text-base sm:text-xl font-extrabold text-slate-900 mt-1">Book Your Home Session</h3>
               </div>
               <span class="text-[10px] font-bold text-slate-500">Same-Day Slots</span>
             </div>
 
-            <form class="space-y-3.5" onsubmit="event.preventDefault(); document.querySelector('[data-open-modal=\'booking\']').click();">
+            <form class="space-y-3" onsubmit="event.preventDefault(); document.querySelector('[data-open-modal=\'booking\']').click();">
               <div>
                 <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1">Required Service</label>
                 <select class="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm font-medium text-slate-800 focus:ring-2 focus:ring-emerald-600 outline-none">
