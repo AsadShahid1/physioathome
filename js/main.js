@@ -1,6 +1,6 @@
 /**
  * Physio at Home - physioathome.pk
- * Main JavaScript Interactivity & Modals
+ * Main JavaScript Interactivity, Mobile Drawer, and Modals
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,24 +9,42 @@ document.addEventListener('DOMContentLoaded', () => {
     window.lucide.createIcons();
   }
 
-  // Mobile Menu Drawer Toggle
+  // Mobile Menu Drawer Toggle & Auto-Close on Click
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
   const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
   
   if (mobileMenuBtn && mobileMenu) {
-    mobileMenuBtn.addEventListener('click', () => {
+    mobileMenuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
       mobileMenu.classList.remove('hidden');
       mobileMenu.classList.add('flex');
       document.body.classList.add('overflow-hidden');
     });
   }
 
-  if (closeMobileMenuBtn && mobileMenu) {
-    closeMobileMenuBtn.addEventListener('click', () => {
+  function closeMobileDrawer() {
+    if (mobileMenu) {
       mobileMenu.classList.add('hidden');
       mobileMenu.classList.remove('flex');
       document.body.classList.remove('overflow-hidden');
+    }
+  }
+
+  if (closeMobileMenuBtn) {
+    closeMobileMenuBtn.addEventListener('click', closeMobileDrawer);
+  }
+
+  // Auto-close mobile drawer when clicking any link inside it
+  if (mobileMenu) {
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMobileDrawer);
+    });
+
+    mobileMenu.addEventListener('click', (e) => {
+      if (e.target === mobileMenu) {
+        closeMobileDrawer();
+      }
     });
   }
 
@@ -41,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-open-modal]').forEach(button => {
     button.addEventListener('click', (e) => {
       e.preventDefault();
+      closeMobileDrawer(); // close mobile menu if open
       const modalType = button.getAttribute('data-open-modal');
       
       if (modalType === 'booking') {
@@ -168,35 +187,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Interactive Services Tab Filter (Index & Services Page)
-  const tabButtons = document.querySelectorAll('[data-service-tab]');
-  const serviceCards = document.querySelectorAll('[data-service-card]');
-  
-  if (tabButtons.length > 0 && serviceCards.length > 0) {
-    tabButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const targetCategory = btn.getAttribute('data-service-tab');
-        
-        tabButtons.forEach(b => {
-          b.classList.remove('bg-emerald-600', 'text-white', 'shadow-md');
-          b.classList.add('bg-white', 'text-slate-600', 'hover:bg-emerald-50');
-        });
-
-        btn.classList.remove('bg-white', 'text-slate-600', 'hover:bg-emerald-50');
-        btn.classList.add('bg-emerald-600', 'text-white', 'shadow-md');
-
-        serviceCards.forEach(card => {
-          const cardCat = card.getAttribute('data-service-card');
-          if (targetCategory === 'all' || cardCat === targetCategory) {
-            card.classList.remove('hidden');
-          } else {
-            card.classList.add('hidden');
-          }
-        });
-      });
-    });
-  }
-
   // Accordions (FAQs)
   const accordionItems = document.querySelectorAll('.accordion-header');
   accordionItems.forEach(header => {
@@ -206,10 +196,9 @@ document.addEventListener('DOMContentLoaded', () => {
       
       const isOpen = !content.classList.contains('hidden');
 
-      // Close all accordions
       document.querySelectorAll('.accordion-content').forEach(c => c.classList.add('hidden'));
       document.querySelectorAll('.accordion-icon').forEach(i => {
-        i.style.transform = 'rotate(0deg)';
+        if (i) i.style.transform = 'rotate(0deg)';
       });
 
       if (!isOpen) {
@@ -221,32 +210,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Cart Management State
   let cartItems = [
-    { id: 'pkg-pain-5', name: '5-Session Pain Relief Pack', price: 22000, quantity: 1 }
+    { id: 'pkg-pain-5', name: '5-Session Pain Relief Pack', price: 15000, quantity: 1 }
   ];
 
   function updateCartUI() {
     const cartList = document.getElementById('cart-items-list');
     const cartCount = document.getElementById('cart-count');
     const cartSubtotal = document.getElementById('cart-subtotal');
-    const cartTotal = document.getElementById('cart-total');
 
     if (cartCount) cartCount.textContent = cartItems.reduce((acc, item) => acc + item.quantity, 0).toString();
 
     if (cartList) {
       if (cartItems.length === 0) {
-        cartList.innerHTML = `<div class="text-center py-8 text-slate-500">Your care cart is currently empty.</div>`;
+        cartList.innerHTML = `<div class="text-center py-8 text-slate-500 text-xs">Your care cart is currently empty.</div>`;
       } else {
         cartList.innerHTML = cartItems.map((item, index) => `
           <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-200">
             <div class="space-y-1">
-              <div class="font-semibold text-slate-900 text-sm">${item.name}</div>
-              <div class="text-xs text-emerald-600 font-medium">PKR ${item.price.toLocaleString()}</div>
+              <div class="font-semibold text-slate-900 text-xs">${item.name}</div>
+              <div class="text-xs text-emerald-600 font-bold">PKR ${item.price.toLocaleString()}</div>
             </div>
-            <div class="flex items-center space-x-2">
-              <button onclick="removeCartItem(${index})" class="p-1 text-slate-400 hover:text-red-500 rounded transition-colors" title="Remove item">
-                <i data-lucide="trash-2" class="w-4 h-4"></i>
-              </button>
-            </div>
+            <button onclick="removeCartItem(${index})" class="p-1.5 text-slate-400 hover:text-red-500 rounded transition-colors" title="Remove item">
+              <i data-lucide="trash-2" class="w-4 h-4"></i>
+            </button>
           </div>
         `).join('');
         if (window.lucide) window.lucide.createIcons();
@@ -255,7 +241,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     if (cartSubtotal) cartSubtotal.textContent = `PKR ${subtotal.toLocaleString()}`;
-    if (cartTotal) cartTotal.textContent = `PKR ${subtotal.toLocaleString()}`;
   }
 
   window.removeCartItem = function(index) {
@@ -274,16 +259,6 @@ document.addEventListener('DOMContentLoaded', () => {
     openCartDrawer();
   };
 
-  document.querySelectorAll('[data-add-to-cart]').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const id = btn.getAttribute('data-id') || 'pkg-custom';
-      const name = btn.getAttribute('data-name') || 'Home Physiotherapy Package';
-      const price = parseInt(btn.getAttribute('data-price') || '15000', 10);
-      window.addToCart(id, name, price);
-    });
-  });
-
   updateCartUI();
 
   // Search Filter Handler
@@ -291,22 +266,22 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchResults = document.getElementById('search-results');
   if (searchInput && searchResults) {
     const searchableItems = [
-      { title: 'Dr. Hina Asif PT - Co-Founder & Women\'s Health Specialist', category: 'Therapist', link: 'about.html' },
-      { title: 'Dr. Reeba PT - Pediatric & Postnatal Home Physiotherapist', category: 'Therapist', link: 'about.html' },
-      { title: 'Dr. Amina Amir PT - Pain Management Specialist', category: 'Therapist', link: 'about.html' },
-      { title: 'Dr. Usama PT - Sports & Orthopedic Physiotherapist', category: 'Therapist', link: 'about.html' },
-      { title: 'Dr. Nazar Rasool PT - Musculoskeletal & Post-Op Rehab Specialist', category: 'Therapist', link: 'about.html' },
-      { title: 'Dr. Maryam PT - Female Physiotherapist for Home Visits', category: 'Therapist', link: 'about.html' },
-      { title: 'Pain Management Physiotherapy (Back, Neck, Sciatica)', category: 'Service', link: 'services.html' },
-      { title: 'Post-Surgery Rehabilitation (Spine, Joint Replacement)', category: 'Service', link: 'services.html' },
-      { title: 'Women\'s Physiotherapy & Pelvic Health (Female Only)', category: 'Service', link: 'services.html' },
-      { title: 'Pediatric Physiotherapy (Milestones, Cerebral Palsy)', category: 'Service', link: 'services.html' },
-      { title: 'Neurological Physiotherapy (Stroke Rehab, MS, Parkinson\'s)', category: 'Service', link: 'services.html' },
-      { title: 'Online Video Physiotherapy Consultation', category: 'Service', link: 'services.html' },
-      { title: 'DHA Lahore At-Home Session Booking', category: 'Location', link: 'book-appointment.html' },
-      { title: 'Johar Town At-Home Session Booking', category: 'Location', link: 'book-appointment.html' },
+      { title: 'Dr. Hina Asif PT - Co-Founder & Women\'s Health', category: 'Doctor', link: 'about.html' },
+      { title: 'Dr. Reeba PT - Pediatric & Postnatal Care', category: 'Doctor', link: 'about.html' },
+      { title: 'Dr. Amina Amir PT - Pain Specialist', category: 'Doctor', link: 'about.html' },
+      { title: 'Dr. Usama PT - Sports & Orthopedic', category: 'Doctor', link: 'about.html' },
+      { title: 'Dr. Nazar Rasool PT - Post-Op Rehab', category: 'Doctor', link: 'about.html' },
+      { title: 'Dr. Maryam PT - Female Home Visit', category: 'Doctor', link: 'about.html' },
+      { title: 'Pain Management Physiotherapy', category: 'Service', link: 'services.html' },
+      { title: 'Post-Surgery Rehabilitation', category: 'Service', link: 'services.html' },
+      { title: 'Women\'s Physiotherapy', category: 'Service', link: 'services.html' },
+      { title: 'Pediatric Physiotherapy', category: 'Service', link: 'services.html' },
+      { title: 'Neurological Rehabilitation', category: 'Service', link: 'services.html' },
+      { title: 'Online Video Consultation', category: 'Service', link: 'services.html' },
+      { title: 'DHA Lahore Home Visit', category: 'Location', link: 'book-appointment.html' },
+      { title: 'Johar Town Home Visit', category: 'Location', link: 'book-appointment.html' },
       { title: 'Gulberg & Model Town Home Visit', category: 'Location', link: 'book-appointment.html' },
-      { title: 'Bahria Town & Lake City Home Visit', category: 'Location', link: 'book-appointment.html' }
+      { title: 'Bahria Town Home Visit', category: 'Location', link: 'book-appointment.html' }
     ];
 
     searchInput.addEventListener('input', (e) => {
@@ -326,8 +301,8 @@ document.addEventListener('DOMContentLoaded', () => {
         searchResults.innerHTML = matches.map(item => `
           <a href="${item.link}" class="block p-3 hover:bg-slate-50 rounded-xl transition-colors border-b border-slate-100 last:border-0">
             <div class="flex items-center justify-between">
-              <div class="text-sm font-semibold text-slate-800">${item.title}</div>
-              <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">${item.category}</span>
+              <div class="text-xs font-semibold text-slate-800">${item.title}</div>
+              <span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">${item.category}</span>
             </div>
           </a>
         `).join('');
