@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Doctors & About Us | Physio at Home Lahore</title>
+  <meta name="description" content="Meet the certified team of physiotherapists at Physio at Home Lahore. Led by Co-Founder Dr. Hina Asif PT, Dr. Reeba PT, Dr. Amina Amir PT, Dr. Usama PT, Dr. Nazar Rasool PT, and Dr. Maryam PT." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            emerald: { 50: '#ecfdf5', 100: '#d1fae5', 500: '#10b981', 600: '#059669', 700: '#047857' }
+          },
+          fontFamily: { sans: ['Inter', 'Plus Jakarta Sans', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased">
+
+  <!-- ==================== TOP CONTACT & ANNOUNCEMENT BAR ==================== -->
+  <div class="bg-slate-900 text-slate-300 text-xs py-2.5 px-4 sm:px-6 lg:px-8 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center space-x-4 overflow-hidden">
+        <span class="flex items-center space-x-1.5 text-emerald-400 font-medium shrink-0">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-400"></i>
+          <span>Lahore's Leading At-Home Physio Platform</span>
+        </span>
+        <span class="hidden md:flex items-center space-x-1.5 text-slate-400 truncate border-l border-slate-700 pl-4">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-400 shrink-0"></i>
+          <span>Serving DHA, Cantt, Johar Town, Gulberg, Model Town, Bahria Town & All Lahore Areas</span>
+        </span>
+      </div>
+      <div class="flex items-center space-x-5 text-slate-300">
+        <a href="tel:+923340043512" class="flex items-center space-x-1.5 hover:text-emerald-400 transition-colors font-semibold">
+          <i data-lucide="phone-call" class="w-3.5 h-3.5 text-emerald-400"></i>
+          <span>0334 0043512</span>
+        </a>
+        <a href="tel:+923124090036" class="hidden sm:flex items-center space-x-1.5 hover:text-emerald-400 transition-colors font-semibold">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-emerald-400"></i>
+          <span>0312 4090036</span>
+        </a>
+        <span class="text-slate-700">|</span>
+        <a href="https://wa.me/923340043512" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-1 text-emerald-400 hover:text-emerald-300 font-semibold transition-colors">
+          <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+          <span>WhatsApp Us</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MAIN STICKY NAVIGATION BAR ==================== -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      
+      <!-- Brand Logo (Physio at Home) -->
+      <a href="index.html" class="flex items-center space-x-3 group shrink-0">
+        <div class="w-10 h-10 bg-slate-900 rounded-xl flex items-center justify-center text-emerald-400 shadow-sm border border-slate-800 group-hover:bg-emerald-600 group-hover:text-white transition-all shrink-0">
+          <svg class="w-5 h-5 fill-none stroke-current stroke-[2.2]" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 10l9-7 9 7v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V10z" />
+            <path d="M9 14h6M12 11v6" />
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xl sm:text-2xl font-black tracking-tight text-slate-900 leading-none">Physio<span class="text-emerald-600">AtHome</span><span class="text-slate-400">.pk</span></span>
+          <span class="text-[9px] font-bold tracking-widest text-slate-500 uppercase mt-0.5">Lahore Doorstep Healthcare</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-slate-600">
+        <a href="index.html" class="hover:text-emerald-600 transition-colors">Home</a>
+        <a href="services.html" class="hover:text-emerald-600 transition-colors">Services</a>
+        <a href="about.html" class="text-emerald-600 font-bold border-b-2 border-emerald-600 pb-1">Our Doctors</a>
+        <a href="home-care.html" class="hover:text-emerald-600 transition-colors">Home Visit Guide</a>
+        <a href="packages.html" class="hover:text-emerald-600 transition-colors">Packages</a>
+        <a href="chiropractic.html" class="hover:text-emerald-600 transition-colors">Manual Therapy</a>
+        <a href="blog.html" class="hover:text-emerald-600 transition-colors">Blog</a>
+      </nav>
+
+      <!-- Utility Buttons & Booking CTA -->
+      <div class="flex items-center space-x-2.5 shrink-0">
+        <button data-open-modal="search" class="p-2 text-slate-500 hover:text-slate-900 hover:bg-slate-100 rounded-xl transition-all" title="Search">
+          <i data-lucide="search" class="w-5 h-5"></i>
+        </button>
+
+        <button data-open-modal="cart" class="relative p-2 text-slate-500 hover:text-slate-900 hover:bg-slate-100 rounded-xl transition-all" title="Care Cart">
+          <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+          <span id="cart-count" class="absolute top-0.5 right-0.5 w-4 h-4 bg-emerald-600 text-white text-[9px] font-bold rounded-full flex items-center justify-center">1</span>
+        </button>
+
+        <button data-open-modal="booking" class="hidden sm:inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-emerald-600 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-sm">
+          <i data-lucide="calendar" class="w-3.5 h-3.5 text-emerald-400"></i>
+          <span>Book Home Visit</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="bg-white py-16 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+      <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">Our Clinical Roster</span>
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900">Meet Our Certified Doctors</h1>
+      <p class="text-slate-600 max-w-3xl mx-auto text-sm sm:text-base leading-relaxed">
+        At <strong>Physio at Home</strong>, we believe in empowering individuals through compassionate and personalized physiotherapy, all from the comfort of home.
+      </p>
+    </div>
+  </section>
+
+  <!-- MISSION STATEMENT -->
+  <section class="py-14 bg-slate-900 text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+      <i data-lucide="quote" class="w-10 h-10 text-emerald-400 mx-auto"></i>
+      <h2 class="text-2xl font-bold">Our Core Mission</h2>
+      <p class="text-slate-300 text-base sm:text-lg italic leading-relaxed">
+        “Connecting patients with certified, expert physiotherapists for personalized sessions directly at their doorstep across major areas of Lahore.”
+      </p>
+    </div>
+  </section>
+
+  <!-- MEET ALL 6 DOCTORS GRID WITH IMAGES -->
+  <section class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Doctor 1: Dr. Hina Asif PT -->
+        <div class="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-xs hover:shadow-lg transition-all space-y-4 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center space-x-4">
+              <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=300&auto=format&fit=crop&q=80" class="w-16 h-16 rounded-2xl object-cover border-2 border-emerald-500 shrink-0 shadow-sm" alt="Dr. Hina Asif PT">
+              <div>
+                <span class="text-[9px] font-extrabold uppercase px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">Co-Founder</span>
+                <h3 class="text-lg font-extrabold text-slate-900 mt-1">Dr. Hina Asif PT</h3>
+                <p class="text-xs text-slate-500 font-medium">Co-Founder & Lead Physiotherapist</p>
+              </div>
+            </div>
+            <div class="space-y-1.5 text-xs text-slate-700 bg-slate-50 p-3.5 rounded-xl border border-slate-200/60">
+              <div class="flex justify-between">
+                <span class="text-slate-400">Specialization:</span>
+                <span class="font-bold text-slate-800">Women's Health, Pain & Rehab</span>
+              </div>
+              <div class="flex justify-between border-t border-slate-100 pt-1">
+                <span class="text-slate-400">Experience:</span>
+                <span class="font-bold text-emerald-700">5+ Years Clinical</span>
+              </div>
+            </div>
+            <blockquote class="text-xs italic text-slate-600 bg-emerald-50/60 p-3.5 rounded-xl border-l-3 border-emerald-500">
+              “I believe in empowering patients through compassionate care and custom recovery plans.”
+            </blockquote>
+          </div>
+          <button data-open-modal="booking" data-doctor="Dr. Hina Asif PT" class="w-full py-3 bg-slate-900 hover:bg-emerald-600 text-white font-bold rounded-xl text-xs uppercase tracking-wider transition-colors">
+            Book Dr. Hina Asif
+          </button>
+        </div>
+
+        <!-- Doctor 2: Dr. Reeba PT -->
+        <div class="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-xs hover:shadow-lg transition-all space-y-4 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center space-x-4">
+              <img src="https://images.unsplash.com/photo-1594824813566-78853679014b?w=300&auto=format&fit=crop&q=80" class="w-16 h-16 rounded-2xl object-cover border-2 border-pink-500 shrink-0 shadow-sm" alt="Dr. Reeba PT">
+              <div>
+                <span class="text-[9px] font-extrabold uppercase px-2 py-0.5 rounded bg-pink-100 text-pink-800">Female Specialist</span>
+                <h3 class="text-lg font-extrabold text-slate-900 mt-1">Dr. Reeba PT</h3>
+                <p class="text-xs text-slate-500 font-medium">Female Home Physiotherapist</p>
+              </div>
+            </div>
+            <div class="space-y-1.5 text-xs text-slate-700 bg-slate-50 p-3.5 rounded-xl border border-slate-200/60">
+              <div class="flex justify-between">
+                <span class="text-slate-400">Specialization:</span>
+                <span class="font-bold text-slate-800">Pediatric Therapy, Postnatal</span>
+              </div>
+              <div class="flex justify-between border-t border-slate-100 pt-1">
+                <span class="text-slate-400">Experience:</span>
+                <span class="font-bold text-emerald-700">3+ Years Clinical</span>
+              </div>
+            </div>
+            <blockquote class="text-xs italic text-slate-600 bg-pink-50/60 p-3.5 rounded-xl border-l-3 border-pink-500">
+              “My focus is on gentle, child-friendly therapy and women's wellness at home.”
+            </blockquote>
+          </div>
+          <button data-open-modal="booking" data-doctor="Dr. Reeba PT" class="w-full py-3 bg-slate-900 hover:bg-pink-600 text-white font-bold rounded-xl text-xs uppercase tracking-wider transition-colors">
+            Book Dr. Reeba
+          </button>
+        </div>
+
+        <!-- Doctor 3: Dr. Amina Amir PT -->
+        <div class="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-xs hover:shadow-lg transition-all space-y-4 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center space-x-4">
+              <img src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?w=300&auto=format&fit=crop&q=80" class="w-16 h-16 rounded-2xl object-cover border-2 border-emerald-500 shrink-0 shadow-sm" alt="Dr. Amina Amir PT">
+              <div>
+                <span class="text-[9px] font-extrabold uppercase px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">Pain Specialist</span>
+                <h3 class="text-lg font-extrabold text-slate-900 mt-1">Dr. Amina Amir PT</h3>
+                <p class="text-xs text-slate-500 font-medium">Pain Specialist in Lahore</p>
+              </div>
+            </div>
+            <div class="space-y-1.5 text-xs text-slate-700 bg-slate-50 p-3.5 rounded-xl border border-slate-200/60">
+              <div class="flex justify-between">
+                <span class="text-slate-400">Specialization:</span>
+                <span class="font-bold text-slate-800">Musculoskeletal & Rehab</span>
+              </div>
+              <div class="flex justify-between border-t border-slate-100 pt-1">
+                <span class="text-slate-400">Experience:</span>
+                <span class="font-bold text-emerald-700">2+ Years Clinical</span>
+              </div>
+            </div>
+            <blockquote class="text-xs italic text-slate-600 bg-emerald-50/60 p-3.5 rounded-xl border-l-3 border-emerald-500">
+              “Brings quality physiotherapy with modern pain relieving techniques to your home in Lahore.”
+            </blockquote>
+          </div>
+          <button data-open-modal="booking" data-doctor="Dr. Amina Amir PT" class="w-full py-3 bg-slate-900 hover:bg-emerald-600 text-white font-bold rounded-xl text-xs uppercase tracking-wider transition-colors">
+            Book Dr. Amina
+          </button>
+        </div>
+
+        <!-- Doctor 4: Dr. Usama PT -->
+        <div class="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-xs hover:shadow-lg transition-all space-y-4 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center space-x-4">
+              <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=300&auto=format&fit=crop&q=80" class="w-16 h-16 rounded-2xl object-cover border-2 border-slate-700 shrink-0 shadow-sm" alt="Dr. Usama PT">
+              <div>
+                <span class="text-[9px] font-extrabold uppercase px-2 py-0.5 rounded bg-slate-100 text-slate-800">Sports & Ortho</span>
+                <h3 class="text-lg font-extrabold text-slate-900 mt-1">Dr. Usama PT</h3>
+                <p class="text-xs text-slate-500 font-medium">Sports & Orthopedic Physiotherapist</p>
+              </div>
+            </div>
+            <div class="space-y-1.5 text-xs text-slate-700 bg-slate-50 p-3.5 rounded-xl border border-slate-200/60">
+              <div class="flex justify-between">
+                <span class="text-slate-400">Specialization:</span>
+                <span class="font-bold text-slate-800">Joint & Muscle Pain, Mobility</span>
+              </div>
+              <div class="flex justify-between border-t border-slate-100 pt-1">
+                <span class="text-slate-400">Experience:</span>
+                <span class="font-bold text-emerald-700">1+ Years Clinical</span>
+              </div>
+            </div>
+            <blockquote class="text-xs italic text-slate-600 bg-slate-100 p-3.5 rounded-xl border-l-3 border-slate-700">
+              “Helping athletes and patients to recover mobility and strength is my passion.”
+            </blockquote>
+          </div>
+          <button data-open-modal="booking" data-doctor="Dr. Usama PT" class="w-full py-3 bg-slate-900 hover:bg-emerald-600 text-white font-bold rounded-xl text-xs uppercase tracking-wider transition-colors">
+            Book Dr. Usama
+          </button>
+        </div>
+
+        <!-- Doctor 5: Dr. Nazar Rasool PT -->
+        <div class="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-xs hover:shadow-lg transition-all space-y-4 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center space-x-4">
+              <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=300&auto=format&fit=crop&q=80" class="w-16 h-16 rounded-2xl object-cover border-2 border-slate-700 shrink-0 shadow-sm" alt="Dr. Nazar Rasool PT">
+              <div>
+                <span class="text-[9px] font-extrabold uppercase px-2 py-0.5 rounded bg-slate-100 text-slate-800">Post-Op Doctor</span>
+                <h3 class="text-lg font-extrabold text-slate-900 mt-1">Dr. Nazar Rasool PT</h3>
+                <p class="text-xs text-slate-500 font-medium">Best Physiotherapy Doctor in Lahore</p>
+              </div>
+            </div>
+            <div class="space-y-1.5 text-xs text-slate-700 bg-slate-50 p-3.5 rounded-xl border border-slate-200/60">
+              <div class="flex justify-between">
+                <span class="text-slate-400">Specialization:</span>
+                <span class="font-bold text-slate-800">Musculoskeletal Pain & Rehab</span>
+              </div>
+              <div class="flex justify-between border-t border-slate-100 pt-1">
+                <span class="text-slate-400">Experience:</span>
+                <span class="font-bold text-emerald-700">2+ Years Clinical</span>
+              </div>
+            </div>
+            <blockquote class="text-xs italic text-slate-600 bg-slate-100 p-3.5 rounded-xl border-l-3 border-slate-700">
+              “Helping older patients and post-op patients to recover mobility and strength is my passion.”
+            </blockquote>
+          </div>
+          <button data-open-modal="booking" data-doctor="Dr. Nazar Rasool PT" class="w-full py-3 bg-slate-900 hover:bg-emerald-600 text-white font-bold rounded-xl text-xs uppercase tracking-wider transition-colors">
+            Book Dr. Nazar
+          </button>
+        </div>
+
+        <!-- Doctor 6: Dr. Maryam PT -->
+        <div class="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-xs hover:shadow-lg transition-all space-y-4 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center space-x-4">
+              <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=300&auto=format&fit=crop&q=80" class="w-16 h-16 rounded-2xl object-cover border-2 border-pink-500 shrink-0 shadow-sm" alt="Dr. Maryam PT">
+              <div>
+                <span class="text-[9px] font-extrabold uppercase px-2 py-0.5 rounded bg-pink-100 text-pink-800">Female Home Visit</span>
+                <h3 class="text-lg font-extrabold text-slate-900 mt-1">Dr. Maryam PT</h3>
+                <p class="text-xs text-slate-500 font-medium">Female Physiotherapist for Home Visit</p>
+              </div>
+            </div>
+            <div class="space-y-1.5 text-xs text-slate-700 bg-slate-50 p-3.5 rounded-xl border border-slate-200/60">
+              <div class="flex justify-between">
+                <span class="text-slate-400">Specialization:</span>
+                <span class="font-bold text-slate-800">Women's Health Specialist</span>
+              </div>
+              <div class="flex justify-between border-t border-slate-100 pt-1">
+                <span class="text-slate-400">Experience:</span>
+                <span class="font-bold text-emerald-700">2+ Years Clinical</span>
+              </div>
+            </div>
+            <blockquote class="text-xs italic text-slate-600 bg-pink-50/60 p-3.5 rounded-xl border-l-3 border-pink-500">
+              “Experienced, licensed, and compassionate female physiotherapists who offer personalized care right at your doorstep in Samanabad, Lahore.”
+            </blockquote>
+          </div>
+          <button data-open-modal="booking" data-doctor="Dr. Maryam PT" class="w-full py-3 bg-slate-900 hover:bg-pink-600 text-white font-bold rounded-xl text-xs uppercase tracking-wider transition-colors">
+            Book Dr. Maryam
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-slate-950 text-slate-400 text-xs py-14 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
+      
+      <div class="space-y-4">
+        <div class="flex items-center space-x-2.5 text-white font-black text-xl">
+          <div class="w-9 h-9 bg-emerald-600 rounded-xl flex items-center justify-center text-white">
+            <i data-lucide="home" class="w-4 h-4"></i>
+          </div>
+          <span>Physio<span class="text-emerald-500">AtHome</span><span class="text-slate-500 text-sm">.pk</span></span>
+        </div>
+        <p class="text-slate-400 text-xs leading-relaxed">
+          Lahore’s leading platform for at-home physiotherapy services. Empowering individuals through compassionate, personalized physical therapy in the comfort of home.
+        </p>
+        <div class="pt-1 flex items-center space-x-3 text-slate-300">
+          <a href="https://wa.me/923340043512" target="_blank" rel="noopener noreferrer" class="p-2 bg-slate-900 rounded-lg hover:text-emerald-400 transition-colors"><i data-lucide="message-circle" class="w-4 h-4"></i></a>
+          <a href="tel:+923340043512" class="p-2 bg-slate-900 rounded-lg hover:text-emerald-400 transition-colors"><i data-lucide="phone" class="w-4 h-4"></i></a>
+          <a href="mailto:info@physioathome.pk" class="p-2 bg-slate-900 rounded-lg hover:text-emerald-400 transition-colors"><i data-lucide="mail" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-white font-bold text-sm mb-4">Core Services</h4>
+        <ul class="space-y-2.5 text-xs">
+          <li><a href="services.html#pain-management" class="hover:text-emerald-400 transition-colors">Pain Management Physiotherapy</a></li>
+          <li><a href="services.html#post-surgery" class="hover:text-emerald-400 transition-colors">Post-Surgery Rehabilitation</a></li>
+          <li><a href="services.html#womens-health" class="hover:text-emerald-400 transition-colors">Women's Physiotherapy (Female Doctors)</a></li>
+          <li><a href="services.html#pediatric" class="hover:text-emerald-400 transition-colors">Pediatric Physiotherapy</a></li>
+          <li><a href="services.html#neurological" class="hover:text-emerald-400 transition-colors">Neurological Rehabilitation</a></li>
+          <li><a href="services.html#online-consultation" class="hover:text-emerald-400 transition-colors">Online Consultation</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-bold text-sm mb-4">Lahore Coverage Areas</h4>
+        <ul class="space-y-2.5 text-xs">
+          <li class="flex items-center"><i data-lucide="check" class="w-3 h-3 text-emerald-400 mr-2"></i> DHA Lahore (Phases 1 - 9)</li>
+          <li class="flex items-center"><i data-lucide="check" class="w-3 h-3 text-emerald-400 mr-2"></i> Cantt & Askari Housing</li>
+          <li class="flex items-center"><i data-lucide="check" class="w-3 h-3 text-emerald-400 mr-2"></i> Johar Town & Model Town</li>
+          <li class="flex items-center"><i data-lucide="check" class="w-3 h-3 text-emerald-400 mr-2"></i> Gulberg I, II, III & Garden Town</li>
+          <li class="flex items-center"><i data-lucide="check" class="w-3 h-3 text-emerald-400 mr-2"></i> Bahria Town & Lake City</li>
+          <li class="flex items-center"><i data-lucide="check" class="w-3 h-3 text-emerald-400 mr-2"></i> Township & Samanabad</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-bold text-sm mb-4">Contact & Appointments</h4>
+        <div class="space-y-3 text-xs">
+          <p class="flex items-center text-slate-300"><i data-lucide="phone-call" class="w-4 h-4 mr-2 text-emerald-400 shrink-0"></i> 0334 0043512 / 0312 4090036</p>
+          <p class="flex items-center text-slate-300"><i data-lucide="mail" class="w-4 h-4 mr-2 text-emerald-400 shrink-0"></i> info@physioathome.pk</p>
+          <p class="flex items-center text-slate-300"><i data-lucide="clock" class="w-4 h-4 mr-2 text-emerald-400 shrink-0"></i> 8:00 AM - 10:00 PM (Mon - Sun)</p>
+          <div class="pt-2">
+            <button data-open-modal="booking" class="w-full py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl transition-all uppercase tracking-wider text-[11px]">
+              Book Appointment Now
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-900 pt-6 flex flex-col sm:flex-row justify-between items-center text-slate-500 gap-4">
+      <p>© 2026 Physio at Home Lahore (physioathome.pk). All rights reserved.</p>
+      <div class="flex space-x-5 text-xs">
+        <a href="index.html" class="hover:text-emerald-400 transition-colors">Home</a>
+        <a href="services.html" class="hover:text-emerald-400 transition-colors">Services</a>
+        <a href="about.html" class="hover:text-emerald-400 transition-colors">Our Doctors</a>
+        <a href="packages.html" class="hover:text-emerald-400 transition-colors">Packages</a>
+        <a href="book-appointment.html" class="hover:text-emerald-400 transition-colors">Book Session</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
